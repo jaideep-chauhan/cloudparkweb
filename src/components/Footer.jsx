@@ -9,7 +9,7 @@ const Footer = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Mobile responsiveness
 
   return (
-    <Box sx={{ backgroundColor: "#1565c0", color: "white", py: 4, mt: 4 }}>
+    <Box sx={{ backgroundColor: "#035DB8", color: "white", py: 4, mt: 4 }}>
       {/* Footer Content */}
       <Box
         sx={{
@@ -50,7 +50,7 @@ const Footer = () => {
             sx={{
               mt: 2,
               textTransform: "none",
-              backgroundColor: "#FFA000",
+              backgroundColor: "#FFBF40",
               color: "white",
               fontWeight: "bold",
               px: 3,
@@ -74,7 +74,7 @@ const Footer = () => {
           <Paper
             sx={{
               p: 2,
-              bgcolor: "#FFA000",
+              bgcolor: "#FFBF40",
               borderRadius: "10px",
               display: "flex",
               flexDirection: "row",
@@ -82,12 +82,12 @@ const Footer = () => {
               gap: 2,
             }}
           >
-            <LocalPhoneIcon sx={{ color: "blue", fontSize: "30px" }} />
+            <LocalPhoneIcon sx={{ color: "#035DB8", fontSize: "30px" }} />
             <Box>
               <Typography fontWeight="bold" color="#fff">
                 24/7 Customer Service
               </Typography>
-              <Typography variant="body2">+1 416-900-8673</Typography>
+              <Typography variant="body2" color="#035DB8">+1 416-900-8673</Typography>
             </Box>
           </Paper>
 
@@ -95,7 +95,7 @@ const Footer = () => {
           <Paper
             sx={{
               p: 2,
-              bgcolor: "#FFA000",
+              bgcolor: "#FFBF40",
               borderRadius: "10px",
               display: "flex",
               flexDirection: "row",
@@ -103,7 +103,7 @@ const Footer = () => {
               gap: 1,
             }}
           >
-            <EmailIcon sx={{ color: "blue", fontSize: "30px" }} />
+            <EmailIcon sx={{ color: "#035DB8", fontSize: "30px" }} />
             <Box>
               {[
                 { label: "General Inquiry", email: "info@cloudpark.ca" },
@@ -115,7 +115,7 @@ const Footer = () => {
                   <Typography variant="body2" color="#fff">
                     {contact.label}
                   </Typography>
-                  <Typography variant="body2" paddingLeft="15px">{contact.email}</Typography>
+                  <Typography variant="body2" paddingLeft="15px" color="#035DB8">{contact.email}</Typography>
                 </Box>
               ))}
             </Box>
@@ -125,7 +125,7 @@ const Footer = () => {
           <Paper
             sx={{
               p: 2,
-              bgcolor: "#FFA000",
+              bgcolor: "#FFBF40",
               borderRadius: "10px",
               display: "flex",
               flexDirection: "row",
@@ -133,13 +133,13 @@ const Footer = () => {
               gap: 2,
             }}
           >
-            <HomeIcon sx={{ color: "blue", fontSize: "30px" }} />
+            <HomeIcon sx={{ color: "#035DB8", fontSize: "30px" }} />
             <Box>
               <Typography variant="body2" color="#fff">
-                Calgary Yard: 9050 Innovation Ave SE, Calgary, AB T3S 0A2
+                Calgary Yard: <span style={{color:"#035DB8"}}>9050 Innovation Ave SE, Calgary, AB T3S 0A2</span>
               </Typography>
               <Typography variant="body2" color="#fff">
-                GTA Yard: 7499 Auburn Road, Milton, ON, L9T 7V9
+                GTA Yard: <span style={{color:"#035DB8"}}>7499 Auburn Road, Milton, ON, L9T 7V9</span>
               </Typography>
             </Box>
           </Paper>
@@ -184,9 +184,9 @@ const Footer = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: isMobile ? "column" : "row",
+            flexDirection:"row",
             justifyContent: "center",
-            gap: isMobile ? 1 : 2,
+            gap:2,
           }}
         >
           {["Privacy", "Terms & Conditions", "Site Map", "Contact"].map((link, i) => (

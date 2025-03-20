@@ -26,7 +26,7 @@ const OurFleet = () => {
                 <Box
                     sx={{
                         display: "inline-block",
-                        backgroundColor: "#003087",
+                        backgroundColor: "#035DB8",
                         color: "#ffffff",
                         borderRadius: "20px",
                         px: 2,
@@ -35,14 +35,14 @@ const OurFleet = () => {
                         mt: 10
                     }}
                 >
-                    <Typography variant="h6" color="#f4a236">Our Fleet</Typography>
+                    <Typography variant="h6" color="#FFBF40">Our Fleet</Typography>
                 </Box>
 
                 {/* Main Heading */}
                 <Typography
                     variant="h4"
                     fontWeight="bold"
-                    color="#003087"
+                    color="#035DB8"
                     gutterBottom
                     sx={{ mb: 2, mt: 1 }}
                 >
@@ -62,7 +62,7 @@ const OurFleet = () => {
                     {/* Row 1: Modern Fleet */}
                     <Box
                         sx={{
-                            backgroundColor: "#003087",
+                            backgroundColor: "#035DB8",
                             color: "#ffffff",
                             padding: 4,
                             minHeight: "300px",
@@ -132,7 +132,7 @@ const OurFleet = () => {
                     {/* Row 2: Comprehensive Capabilities */}
                     <Box
                         sx={{
-                            backgroundColor: "#003087",
+                            backgroundColor: "#035DB8",
                             color: "#ffffff",
                             padding: 4,
                             minHeight: "300px",

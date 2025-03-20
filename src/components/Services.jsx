@@ -8,6 +8,7 @@ import USFlag from "../../public/images/american-flag-2144392_640.png"; // US fl
 const Services = () => {
   return (
     <Box
+    
       sx={{
         py: 6,
         backgroundColor: "#f5f5f5",
@@ -39,7 +40,7 @@ const Services = () => {
           <Box
             sx={{
               display: "inline-block",
-              backgroundColor: "#003087",
+              backgroundColor: "#035DB8",
               color: "#ffffff",
               borderRadius: "20px",
               px: 2,
@@ -48,14 +49,14 @@ const Services = () => {
               mt: 14
             }}
           >
-            <Typography variant="h6" color="#ffd700">Service Areas</Typography>
+            <Typography variant="h6" color="#FFBF40">Service Areas</Typography>
           </Box>
 
           {/* Main Heading */}
           <Typography
             variant="h4"
             fontWeight="bold"
-            color="#003087"
+            color="#035DB8"
             gutterBottom
           >
             Delivering Coast-to-Coast Coverage
@@ -65,7 +66,7 @@ const Services = () => {
           <Typography
             variant="h6"
             mt={2}
-            color="#f4a236"
+            color="#FFBF40"
             gutterBottom
           >
             Seamlessly connecting every corner of Canada and the USA
@@ -126,8 +127,8 @@ const Services = () => {
             sx={{
               mt: 2,
               backgroundColor: "#ffff",
-              color: "#003087",
-              border: "2px solid #f4a236",
+              color: "#035DB8",
+              border: "2px solid #FFBF40",
               "&:hover": {
                 backgroundColor: "#f57c00",
               },

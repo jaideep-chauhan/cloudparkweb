@@ -31,12 +31,12 @@ const About = () => {
         <Typography
           variant="subtitle1"
           sx={{
-            bgcolor: "#1565c0",
+            bgcolor: "#035DB8",
             display: "inline-block",
             px: 3,
             py: 1,
             borderRadius: "20px",
-            mb: 2,
+            mb: {xs:4,md:2,lg:2},
           }}
         >
           ABOUT US
@@ -93,7 +93,7 @@ const About = () => {
               sx={{
                 paddingX: "40px",
                 paddingY: "20px",
-                bgcolor: "#1565c0",
+                bgcolor: "#035DB8",
                 color: "#fff",
                 borderRadius: "10px",
                 textAlign: "left",
@@ -104,7 +104,7 @@ const About = () => {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  backgroundColor: "yellow",
+                  backgroundColor: "#FFBF40",
                   padding: "10px",
                   borderRadius: "50%",
                 }}
@@ -118,7 +118,7 @@ const About = () => {
               <Typography
                 variant="h6"
                 fontWeight="bold"
-                sx={{ color: "#ffd700" ,fontSize:{xs:16} }}
+                sx={{ color: "#FFBF40" ,fontSize:{xs:16} }}
               >
                 Fleet Strength
               </Typography>
@@ -126,13 +126,13 @@ const About = () => {
                 <Typography variant="h3" fontWeight="bold" fontSize={{xs:30}}>
                   30+
                 </Typography>
-                <Typography variant="body2">Trucks </Typography>
+                <Typography variant="body2" color="#FFBF40">Trucks </Typography>
               </Box>
               <Box sx={{ display: "flex", alignItems: "end" }}>
                 <Typography variant="h4" fontWeight="bold" fontSize={{xs:30}}>
                   60+
                 </Typography>
-                <Typography variant="body2">Trailers</Typography>
+                <Typography variant="body2" color="#FFBF40">Trailers</Typography>
               </Box>
             </Paper>
           </Grid>
@@ -144,7 +144,7 @@ const About = () => {
               sx={{
                 paddingX: {xs:"30px",md:"40px"},
                 paddingY: "20px",
-                bgcolor: "#1565c0",
+                bgcolor: "#035DB8",
                 color: "#fff",
                 borderRadius: "10px",
                 textAlign: "left",
@@ -155,7 +155,7 @@ const About = () => {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  backgroundColor: "yellow",
+                  backgroundColor: "#FFBF40",
                   padding: "10px",
                   borderRadius: "50%",
                 }}
@@ -169,14 +169,14 @@ const About = () => {
               <Typography
                 variant="h6"
                 fontWeight="bold"
-                sx={{ color: "#ffd700", fontSize:{xs:16} }}
+                sx={{ color: "#FFBF40", fontSize:{xs:16} }}
               >
                 Service Reach
               </Typography>
               <Typography variant="h2" fontWeight="bold" fontSize={{xs:30,md:40}}>
                 50K+
               </Typography>
-              <Typography variant="body2">Shipments Completed</Typography>
+              <Typography variant="body2" color="#FFBF40">Shipments Completed</Typography>
             </Paper>
           </Grid>
 
@@ -187,7 +187,7 @@ const About = () => {
               sx={{
                 paddingX: "40px",
                 paddingY: "20px",
-                bgcolor: "#1565c0",
+                bgcolor: "#035DB8",
                 color: "#fff",
                 borderRadius: "10px",
                 textAlign: "left",
@@ -198,7 +198,7 @@ const About = () => {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  backgroundColor: "yellow",
+                  backgroundColor: "#FFBF40",
                   padding: "10px",
                   borderRadius: "50%",
                 }}
@@ -212,7 +212,7 @@ const About = () => {
               <Typography variant="h1" fontWeight="bold" fontSize={{xs:30, md:"4rem"}}>
                 10+
               </Typography>
-              <Typography variant="body2">
+              <Typography variant="body2" color="#FFBF40">
                 Years of Industry Experience
               </Typography>
             </Paper>
@@ -225,7 +225,7 @@ const About = () => {
               sx={{
                 paddingX: "40px",
                 paddingY: "20px",
-                bgcolor: "#1565c0",
+                bgcolor: "#035DB8",
                 color: "#fff",
                 borderRadius: "10px",
                 textAlign: "left",
@@ -236,7 +236,7 @@ const About = () => {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  backgroundColor: "yellow",
+                  backgroundColor: "#FFBF40",
                   padding: "10px",
                   borderRadius: "50%",
                 }}

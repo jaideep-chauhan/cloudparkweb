@@ -41,7 +41,7 @@ const SubscribeSection = () => {
 
       {/* Subscription Heading */}
       <Box textAlign={isMobile ? "center" : "left"}>
-        <Typography variant="h5" fontWeight="bold" color="primary">
+        <Typography variant="h5" fontWeight="bold" color="#035DB8">
           Subscribe for Updates
         </Typography>
         <Typography variant="body1" color="textSecondary">

@@ -9,7 +9,7 @@ import {
   ListItem,
   ListItemText,
   Box,
-  Divider
+  Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -20,11 +20,27 @@ const Navbar = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const offset = 80; // Adjust this based on navbar height
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: sectionPosition,
+        behavior: "smooth",
+      });
+
+      setMobileOpen(false); // Close mobile menu after clicking a link
+    }
+  };
+
   const navItems = [
-    { text: "Home", link: "#home" },
-    { text: "Services", link: "#services" },
-    { text: "Our Fleet", link: "#fleet" },
-    { text: "Contact Us", link: "#contact" },
+    { text: "Home", link: "hero" },
+    { text: "Services", link: "services" },
+    { text: "Our Fleet", link: "fleet" },
+    { text: "Contact Us", link: "contact" },
   ];
 
   return (
@@ -32,21 +48,20 @@ const Navbar = () => {
       <Toolbar
         sx={{
           display: "flex",
-          justifyContent: {xs:"space-between",md:"center"},
+          justifyContent: { xs: "space-between", md: "center" },
           gap: 4,
           alignItems: "center",
           paddingX: mobileOpen ? "10px" : "",
         }}
       >
-      
-
         {/* Left Buttons */}
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
           {navItems.slice(0, 2).map((item, index) => (
             <Button
               key={index}
               color="inherit"
-              href={item.link}
+              // href={item.link}
+              onClick={() => handleScroll(item.link)}
               sx={{ fontSize: "18px", fontWeight: "bold" }}
             >
               {item.text}
@@ -69,15 +84,16 @@ const Navbar = () => {
             <Button
               key={index}
               color="inherit"
-              href={item.link}
+              // href={item.link}
+              onClick={() => handleScroll(item.link)}
               sx={{ fontSize: "18px", fontWeight: "bold" }}
             >
               {item.text}
             </Button>
           ))}
         </Box>
-          {/* Mobile Menu Button */}
-          <IconButton
+        {/* Mobile Menu Button */}
+        <IconButton
           edge="start"
           color="inherit"
           aria-label="menu"
@@ -102,11 +118,19 @@ const Navbar = () => {
           },
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", p: 2, color:"#fff" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            p: 2,
+            color: "#fff",
+          }}
+        >
           <img
             src="/images/logo-01.png"
             alt="Cloudpark Logistics"
-            style={{ maxWidth: "150px", marginBottom: "10px", color:"#fff" }}
+            style={{ maxWidth: "150px", marginBottom: "10px", color: "#fff" }}
           />
         </Box>
         <Divider sx={{ bgcolor: "white" }} />
@@ -116,11 +140,16 @@ const Navbar = () => {
               button
               key={index}
               component="a"
-              href={item.link}
-              onClick={handleDrawerToggle}
-              sx={{ "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" } }}
+              // href={item.link}
+              onClick={() => handleScroll(item.link)}
+              sx={{
+                "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
+              }}
             >
-              <ListItemText primary={item.text} sx={{ textAlign: "center", fontWeight: "bold", color:"#fff" }} />
+              <ListItemText
+                primary={item.text}
+                sx={{ textAlign: "center", fontWeight: "bold", color: "#fff" }}
+              />
             </ListItem>
           ))}
         </List>

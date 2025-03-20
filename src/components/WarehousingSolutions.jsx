@@ -26,7 +26,7 @@ const WarehousingSolutions = () => {
         <Box
           sx={{
             display: "inline-block",
-            backgroundColor: "#003087",
+            backgroundColor: "#035DB8",
             color: "#ffffff",
             borderRadius: "20px",
             px: 2,
@@ -34,7 +34,7 @@ const WarehousingSolutions = () => {
             mb: 4,
           }}
         >
-          <Typography variant="h6" color="#f4a236">
+          <Typography variant="h6" color="#FFBF40">
             Warehousing Solutions
           </Typography>
         </Box>
@@ -43,7 +43,7 @@ const WarehousingSolutions = () => {
         <Typography
           variant="h3"
           fontWeight="bold"
-          color="#003087"
+          color="#035DB8"
           gutterBottom
           sx={{ mb: 2 ,fontSize:{xs:20} }}
         >
@@ -76,7 +76,7 @@ const WarehousingSolutions = () => {
           {/* Temperature-Controlled Storage */}
           <Box
             sx={{
-              backgroundColor: "#003087",
+              backgroundColor: "#035DB8",
               color: "#ffffff",
               borderRadius: "8px",
               paddingY: 5,
@@ -105,7 +105,7 @@ const WarehousingSolutions = () => {
                 left: "0",
                 transform: "translate(-50%, -50%)",
                 transition: "transform 0.3s ease",
-                border:"2px solid yellow"
+                border:"2px solid #FFBF40"
               }}
             >
               <img
@@ -134,7 +134,7 @@ const WarehousingSolutions = () => {
           {/* Dry Storage */}
           <Box
             sx={{
-              backgroundColor: "#003087",
+              backgroundColor: "#035DB8",
               color: "#ffffff",
               borderRadius: "8px",
               paddingY: 5,
@@ -163,7 +163,7 @@ const WarehousingSolutions = () => {
                 left: "0",
                 transform: "translate(-50%, -50%)",
                 transition: "transform 0.3s ease",
-                border:"2px solid yellow"
+                border:"2px solid #FFBF40"
              }}
             >
               <img
@@ -185,7 +185,7 @@ const WarehousingSolutions = () => {
           {/* Short-Term and Long-Term Leasing */}
           <Box
             sx={{
-              backgroundColor: "#003087",
+              backgroundColor: "#035DB8",
               color: "#ffffff",
               borderRadius: "8px",
               paddingY: 5,
@@ -214,7 +214,7 @@ const WarehousingSolutions = () => {
                 left: "0",
                 transform: "translate(-50%, -50%)",
                 transition: "transform 0.3s ease",
-                border:"2px solid yellow"
+                border:"2px solid #FFBF40"
               }}
             >
               <img

@@ -28,7 +28,7 @@ const RequestFormMap = () => {
                 onSubmit={handleSubmit}
                 sx={{
                     flex: isMobile ? "1 0 100%" : "0 0 30%", // Full width for mobile
-                    backgroundColor: "#003087",
+                    backgroundColor: "#035DB8",
                     color: "#ffffff",
                     borderRadius: "12px",
                     padding: 4,
@@ -136,7 +136,7 @@ const RequestFormMap = () => {
                     type="submit"
                     variant="contained"
                     sx={{
-                        backgroundColor: "#ffd700",
+                        backgroundColor: "#FFBF40",
                         color: "#000000",
                         textTransform: "none",
                         fontWeight: "bold",
@@ -163,7 +163,7 @@ const RequestFormMap = () => {
             <Box
                 sx={{
                     flex: isMobile ? "1 0 100%" : "0 0 70%", // Full width on mobile
-                    border: "2px solid #003087",
+                    border: "15px solid #035DB8",
                     borderRadius: "12px",
                     overflow: "hidden",
                     // height: isMobile ? "300px" : "500px", // Adjust height for mobile

@@ -9,8 +9,8 @@ const features = [
 
 const Features = () => {
   return (
-    <Container sx={{ py: 10, textAlign: "center" }}>
-      <Typography variant="h3" fontWeight="bold" color="primary" mb={6}>
+    <Container sx={{ py: {xs:5,md:10,lg:10}, textAlign: "center" }}>
+      <Typography variant="h3" fontWeight="bold" color="#035DB8" mb={6} fontSize={{xs:40}}>
         Driving Excellence in Every Mile
       </Typography>
       <Grid container spacing={5} alignItems="stretch">
@@ -35,14 +35,14 @@ const Features = () => {
               }}
             >
               <Typography variant="h2">{feature.icon}</Typography>
-              <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#ffd700" }}>
+              <Typography variant="h6" fontWeight="bold" mt={2} sx={{ color: "#FFBF40" }}>
                 {feature.title}
               </Typography>
               <Typography
                 variant="body1"
                 mt={2}
                 className="description"
-                sx={{ flexGrow: 1, color: "primary.main" }}
+                sx={{ flexGrow: 1, color: "#035DB8" }}
               >
                 {feature.description}
               </Typography>
