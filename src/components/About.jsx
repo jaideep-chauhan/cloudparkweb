@@ -81,22 +81,26 @@ const About = () => {
             <Paper
               elevation={6}
               sx={{
-                p: 2,
+                paddingX:"40px",
+                paddingY:"20px",
                 bgcolor: "#1565c0",
                 color: "#fff",
                 borderRadius: "10px",
                 textAlign: "left",
               }}
             >
-              <LocalShippingIcon
+              <Box
                 sx={{
-                  fontSize: 40,
-                  color: "#ffd700",
                   position: "absolute",
                   top: 0,
                   left: 0,
+                  backgroundColor:"yellow",
+                  padding:"10px",
+                  borderRadius:"50%"
                 }}
-              />
+              >
+                <img src="./images/about-icon1.png" width="40px" height='40px' ></img>
+              </Box>
               <Typography
                 variant="h6"
                 fontWeight="bold"
@@ -124,23 +128,26 @@ const About = () => {
             <Paper
               elevation={6}
               sx={{
-                p: 2,
+                paddingX:"40px",
+                paddingY:"20px",
                 bgcolor: "#1565c0",
                 color: "#fff",
                 borderRadius: "10px",
                 textAlign: "left",
               }}
             >
-              <InventoryIcon
+               <Box
                 sx={{
-                  fontSize: 40,
-                  color: "#ffd700",
-                  mb: 1,
                   position: "absolute",
                   top: 0,
                   left: 0,
+                  backgroundColor:"yellow",
+                  padding:"10px",
+                  borderRadius:"50%"
                 }}
-              />
+              >
+                <img src="./images/about-icon2.png" width="40px" height='40px' ></img>
+              </Box>
               <Typography
                 variant="h6"
                 fontWeight="bold"
@@ -160,23 +167,26 @@ const About = () => {
             <Paper
               elevation={6}
               sx={{
-                p: 2,
+                paddingX:"40px",
+                paddingY:"20px",
                 bgcolor: "#1565c0",
                 color: "#fff",
                 borderRadius: "10px",
                 textAlign: "left",
               }}
             >
-              <WorkspacePremiumIcon
+              <Box
                 sx={{
-                  fontSize: 40,
-                  color: "#ffd700",
-                  mb: 1,
                   position: "absolute",
                   top: 0,
                   left: 0,
+                  backgroundColor:"yellow",
+                  padding:"10px",
+                  borderRadius:"50%"
                 }}
-              />
+              >
+                <img src="./images/about-icon3.png" width="40px" height='40px' ></img>
+              </Box>
               <Typography variant="h1" fontWeight="bold" fontSize="5rem">
                 10+
               </Typography>
@@ -191,23 +201,26 @@ const About = () => {
             <Paper
               elevation={6}
               sx={{
-                p: 2,
+                paddingX:"40px",
+                paddingY:"20px",
                 bgcolor: "#1565c0",
                 color: "#fff",
                 borderRadius: "10px",
                 textAlign: "left",
               }}
             >
-              <AcUnitIcon
+              <Box
                 sx={{
-                  fontSize: 40,
-                  color: "#ffd700",
-                  mb: 1,
                   position: "absolute",
                   top: 0,
                   left: 0,
+                  backgroundColor:"yellow",
+                  padding:"10px",
+                  borderRadius:"50%"
                 }}
-              />
+              >
+                <img src="./images/about-icon4.png" width="40px" height='40px' ></img>
+              </Box>
               <Typography variant="h5" fontWeight="bold" fontSize="1.35rem">
                 TEMPERATURE AND AMBIENT WAREHOUSING STORAGE
               </Typography>
