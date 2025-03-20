@@ -1,27 +1,25 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import truckImage from "../../public/images/halftruck.png";
 
 const TruckAndTrailerRepairServices = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Mobile responsiveness
+
     return (
         <Box
             sx={{
                 width: "100%",
                 py: 6,
                 backgroundColor: "#f5f5f5",
-                // position: "relative",
-                paddingLeft: "6%",
+                paddingLeft: isMobile ? 0 : "6%", // Remove left padding for mobile
                 marginBottom: "10%",
-                overflow:"hidden"
+                overflow: "hidden",
+                textAlign: isMobile ? "center" : "left" // Center align text on mobile
             }}
         >
-            <Box
-                sx={{
-                    width: "100%",
-                    textAlign: "center",
-                    px: { xs: 2, md: 0 },
-                }}
-            >
+            <Box sx={{ width: "100%", px: { xs: 2, md: 0 } }}>
+                {/* Heading Section */}
                 <Box
                     sx={{
                         display: "inline-block",
@@ -33,7 +31,9 @@ const TruckAndTrailerRepairServices = () => {
                         mb: 4,
                     }}
                 >
-                    <Typography variant="h6" color="#f4a236">Truck & Trailer Repair Services</Typography>
+                    <Typography variant="h6" color="#f4a236">
+                        Truck & Trailer Repair Services
+                    </Typography>
                 </Box>
 
                 <Box
@@ -41,171 +41,135 @@ const TruckAndTrailerRepairServices = () => {
                         position: "relative",
                         minHeight: "400px",
                         display: "flex",
-                        justifyContent: "flex-start",
+                        flexDirection: isMobile ? "column" : "row", // Stack on mobile
+                        justifyContent: isMobile ? "center" : "flex-start",
                         alignItems: "center",
+                        gap: isMobile ? 3 : 0, // Add spacing between stacked items
                     }}
                 >
-                    {/* Cards Section - 70% width */}
+                    {/* Cards Section */}
                     <Box
                         sx={{
-                            width: "70%",
+                            width: isMobile ? "100%" : "70%",
                             display: "flex",
                             flexDirection: "column",
                             gap: 3,
                             zIndex: 2,
                         }}
                     >
-                        {/* Top Row - 3 Cards */}
+                        {/* First Row - 3 Cards (Becomes Stacked on Mobile) */}
                         <Box
                             sx={{
-                                display: "flex",
+                                display: "grid",
+                                gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", // Stack cards in mobile
                                 gap: 3,
-                                justifyContent: "space-between",
                             }}
                         >
-                            {/* Tire Changes */}
-                            <Box
-                                sx={{
-                                    backgroundColor: "#003087",
-                                    color: "#ffffff",
-                                    borderRadius: "12px",
-                                    paddingX: 3,
-                                    paddingY: 5,
-                                    minWidth: "200px",
-                                    flex: 1,
-                                }}
-                            >
-                                <Typography variant="h6" fontWeight="bold" mb="16px" gutterBottom>
-                                    Tire Changes
-                                </Typography>
-                                <Typography variant="body2" textAlign="left">
-                                    • On-site and roadside tire replacements
-                                    <br />
-                                    • New and retread tire installation
-                                    <br />
-                                    • Flat tire repairs and pressure checks
-                                </Typography>
-                            </Box>
-
-                            {/* Brake Replacement */}
-                            <Box
-                                sx={{
-                                    backgroundColor: "#003087",
-                                    color: "#ffffff",
-                                    borderRadius: "12px",
-                                    paddingX: 3,
-                                    paddingY: 5,
-                                    minWidth: "200px",
-                                    flex: 1,
-                                }}
-                            >
-                                <Typography variant="h6" fontWeight="bold" mb="16px" gutterBottom>
-                                    Brake Replacement
-                                </Typography>
-                                <Typography variant="body2" textAlign="left">
-                                    • Full brake system inspections
-                                    <br />
-                                    • Brake pad, drum, and rotor replacements
-                                    <br />
-                                    • ABS system troubleshooting and repairs
-                                </Typography>
-                            </Box>
-
-                            {/* Refrigeration Unit Repairs */}
-                            <Box
-                                sx={{
-                                    backgroundColor: "#003087",
-                                    color: "#ffffff",
-                                    borderRadius: "12px",
-                                    paddingX: 3,
-                                    paddingY: 5,
-                                    minWidth: "200px",
-                                    flex: 1,
-                                }}
-                            >
-                                <Typography variant="h6" fontWeight="bold" mb="16px" gutterBottom>
-                                    Refrigeration Unit Repairs
-                                </Typography>
-                                <Typography variant="body2" textAlign="left">
-                                    • Routine maintenance and diagnostics for reefer units
-                                    <br />
-                                    • Temperature control system calibration
-                                    <br />
-                                    • Electrical and mechanical component repairs
-                                </Typography>
-                            </Box>
+                            {/* Card Components */}
+                            {[
+                                {
+                                    title: "Tire Changes",
+                                    content:
+                                        "• On-site and roadside tire replacements\n• New and retread tire installation\n• Flat tire repairs and pressure checks",
+                                },
+                                {
+                                    title: "Brake Replacement",
+                                    content:
+                                        "• Full brake system inspections\n• Brake pad, drum, and rotor replacements\n• ABS system troubleshooting and repairs",
+                                },
+                                {
+                                    title: "Refrigeration Unit Repairs",
+                                    content:
+                                        "• Routine maintenance and diagnostics for reefer units\n• Temperature control system calibration\n• Electrical and mechanical component repairs",
+                                },
+                            ].map((item, index) => (
+                                <Box
+                                    key={index}
+                                    sx={{
+                                        backgroundColor: "#003087",
+                                        color: "#ffffff",
+                                        borderRadius: "12px",
+                                        paddingX: 3,
+                                        paddingY: 5,
+                                        minWidth: "200px",
+                                        flex: 1,
+                                        textAlign: "left",
+                                    }}
+                                >
+                                    <Typography variant="h6" fontWeight="bold" mb="16px" gutterBottom>
+                                        {item.title}
+                                    </Typography>
+                                    <Typography variant="body2" whiteSpace="pre-line">
+                                        {item.content}
+                                    </Typography>
+                                </Box>
+                            ))}
                         </Box>
 
-                        {/* Bottom Row - 2 Cards */}
+                        {/* Second Row - 2 Cards (Stacked on Mobile) */}
                         <Box
                             sx={{
-                                display: "flex",
+                                display: "grid",
+                                gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", // 2 cards in a row on desktop
                                 gap: 3,
-                                justifyContent: "space-between",
-                                maxWidth: "75%"
+                                maxWidth: "75%",
+                                mx: isMobile ? "auto" : "0", // Centering for mobile
                             }}
                         >
-                            {/* Annual Safety Inspections */}
-                            <Box
-                                sx={{
-                                    backgroundColor: "#003087",
-                                    color: "#ffffff",
-                                    borderRadius: "12px",
-                                    paddingX: 3,
-                                    paddingY: 5,
-                                    minWidth: "200px",
-                                    flex: 1,
-                                }}
-                            >
-                                <Typography variant="h6" fontWeight="bold" mb="16px" gutterBottom>
-                                    Annual Safety Inspections
-                                </Typography>
-                                <Typography variant="body2" textAlign="left">
-                                    • Annual safety inspections and certifications
-                                    <br />
-                                    • Lighting and electrical system checks
-                                    <br />
-                                    • Door, seal, and structural integrity assessment
-                                </Typography>
-                            </Box>
-
-                            {/* Basic Truck & Trailer Repairs */}
-                            <Box
-                                sx={{
-                                    backgroundColor: "#003087",
-                                    color: "#ffffff",
-                                    borderRadius: "12px",
-                                    paddingX: 3,
-                                    paddingY: 5,
-                                    minWidth: "200px",
-                                    flex: 1,
-                                }}
-                            >
-                                <Typography variant="h6" fontWeight="bold" mb="16px" gutterBottom>
-                                    Basic Truck & Trailer Repairs
-                                </Typography>
-                                <Typography variant="body2" textAlign="left">
-                                    • Lighting system repairs (LEDs, wiring, faulty connections)
-                                    <br />
-                                    • Battery testing and replacements
-                                    <br />
-                                    • Air system and suspension maintenance
-                                </Typography>
-                            </Box>
+                            {[
+                                {
+                                    title: "Annual Safety Inspections",
+                                    content:
+                                        "• Annual safety inspections and certifications\n• Lighting and electrical system checks\n• Door, seal, and structural integrity assessment",
+                                },
+                                {
+                                    title: "Basic Truck & Trailer Repairs",
+                                    content:
+                                        "• Lighting system repairs (LEDs, wiring, faulty connections)\n• Battery testing and replacements\n• Air system and suspension maintenance",
+                                },
+                            ].map((item, index) => (
+                                <Box
+                                    key={index}
+                                    sx={{
+                                        backgroundColor: "#003087",
+                                        color: "#ffffff",
+                                        borderRadius: "12px",
+                                        paddingX: 3,
+                                        paddingY: 5,
+                                        minWidth: "200px",
+                                        flex: 1,
+                                        textAlign: "left",
+                                    }}
+                                >
+                                    <Typography variant="h6" fontWeight="bold" mb="16px" gutterBottom>
+                                        {item.title}
+                                    </Typography>
+                                    <Typography variant="body2" whiteSpace="pre-line">
+                                        {item.content}
+                                    </Typography>
+                                </Box>
+                            ))}
                         </Box>
                     </Box>
 
-                    {/* Truck Image - 30% width */}
-                    <img
-                        src={truckImage}
-                        alt="Truck"
-                        style={{
-                            scale: "1.4",
-                            width: "30%",
-                            objectFit: "cover",
-                            objectPosition: "right",
+                    {/* Truck Image - Resizes for Mobile */}
+                    <Box
+                        sx={{
+                            width: isMobile ? "90%" : "30%", // Resize image on mobile
+                            mx: isMobile ? "auto" : "0", // Center image on mobile
+                            textAlign: "center",
                         }}
-                    />
+                    >
+                        <img
+                            src={truckImage}
+                            alt="Truck"
+                            style={{
+                                width: "100%",
+                                maxWidth: "350px", // Prevents overly large image on desktop
+                                objectFit: "cover",
+                            }}
+                        />
+                    </Box>
                 </Box>
             </Box>
         </Box>

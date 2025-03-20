@@ -1,19 +1,22 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import truckImage from "../../public/images/IMG_0431.png";
 
 const OurFleet = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Mobile view handling
+
     return (
         <Box
             sx={{
                 py: 6,
-                backgroundColor: "#f5f5f5", // Light background to match the feel
+                backgroundColor: "#f5f5f5",
                 width: "100%"
             }}
         >
             <Box
                 sx={{
-                    maxWidth: "100%", // Adjusted to fit the layout
+                    maxWidth: "100%",
                     textAlign: "center",
                     position: "relative",
                     width: "full"
@@ -28,7 +31,7 @@ const OurFleet = () => {
                         borderRadius: "20px",
                         px: 2,
                         py: 0.5,
-                        mb: 1, // Increased margin-bottom for more space
+                        mb: 1,
                         mt: 10
                     }}
                 >
@@ -41,121 +44,125 @@ const OurFleet = () => {
                     fontWeight="bold"
                     color="#003087"
                     gutterBottom
-                    sx={{ mb: 2, mt: 1 }} // Increased margins for more space
+                    sx={{ mb: 2, mt: 1 }}
                 >
                     Tailored Solutions for Every Logistics Need
                 </Typography>
 
-                {/* Grid Layout for Alternating Sections */}
+                {/* Grid Layout - Responsive for Mobile */}
                 <Box
                     sx={{
-                        position: "relative", // Allow absolute positioning of the truck image
                         display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
-                        gap: 0, // No gap between sections to match the screenshot
-                        minHeight: "700px", // Increased height for more vertical space
+                        gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", // Single column on mobile
+                        gap: isMobile ? 3 : 0, // Increased spacing for mobile
+                        minHeight: "700px",
+                        position: "relative",
                     }}
                 >
-                    {/* Row 1: Modern Fleet (Blue) */}
+                    {/* Row 1: Modern Fleet */}
                     <Box
                         sx={{
                             backgroundColor: "#003087",
                             color: "#ffffff",
-                            padding: 8, // Increased padding for more space (32px)
-                            minHeight: "300px", // Increased height for each section
+                            padding: 4,
+                            minHeight: "300px",
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "center",
-                            alignItems: "flex-start", // Align content to the left
+                            alignItems: isMobile ? "center" : "flex-start",
+                            textAlign: isMobile ? "center" : "left"
                         }}
                     >
                         <Typography variant="h5" fontWeight="bold" gutterBottom>
                             MODERN FLEET
                         </Typography>
-                        <Typography variant="body1" paragraph sx={{ textAlign: "left" }}>
+                        <Typography variant="body1" paragraph>
                             We operate a fleet of over 30 trucks equipped with the latest
                             technology and safety features to ensure efficient and reliable
                             transport.
                         </Typography>
                     </Box>
 
-                    {/* Row 1: Vehicle Types (White) */}
+                    {/* Row 1: Vehicle Types */}
                     <Box
                         sx={{
                             backgroundColor: "#ffffff",
-                            padding: 8, // Increased padding for more space (32px)
-                            minHeight: "300px", // Increased height for each section
+                            padding: 4,
+                            minHeight: "300px",
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "center",
-                            alignItems: "flex-end", // Align content to the right
+                            alignItems: isMobile ? "center" : "flex-end",
+                            textAlign: isMobile ? "center" : "right"
                         }}
                     >
                         <Typography variant="h5" fontWeight="bold" gutterBottom>
                             VEHICLE TYPES
                         </Typography>
-                        <Typography variant="body1" paragraph sx={{ textAlign: "right" }}>
+                        <Typography variant="body1" paragraph>
                             Our fleet includes both Dry Vans and Refrigerated (Reefer) units,
                             designed to meet up-to-date market specifications or handling
                             diverse freight needs.
                         </Typography>
                     </Box>
 
-                    {/* Row 2: Secure Storage (White) */}
+                    {/* Row 2: Secure Storage */}
                     <Box
                         sx={{
                             backgroundColor: "#ffffff",
-                            padding: 8, // Increased padding for more space (32px)
-                            minHeight: "300px", // Increased height for each section
+                            padding: 4,
+                            minHeight: "300px",
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "center",
-                            alignItems: "flex-start", // Align content to the left
+                            alignItems: isMobile ? "center" : "flex-start",
+                            textAlign: isMobile ? "center" : "left"
                         }}
                     >
                         <Typography variant="h5" fontWeight="bold" gutterBottom>
                             SECURE STORAGE
                         </Typography>
-                        <Typography variant="body1" paragraph sx={{ textAlign: "left" }}>
+                        <Typography variant="body1" paragraph>
                             We operate a fleet of over 30 trucks equipped with the latest
                             technology and safety features to ensure efficient and reliable
                             transport.
                         </Typography>
                     </Box>
 
-                    {/* Row 2: Comprehensive Capabilities (Blue) */}
+                    {/* Row 2: Comprehensive Capabilities */}
                     <Box
                         sx={{
                             backgroundColor: "#003087",
                             color: "#ffffff",
-                            padding: 8, // Increased padding for more space (32px)
-                            minHeight: "300px", // Increased height for each section
+                            padding: 4,
+                            minHeight: "300px",
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "center",
-                            alignItems: "flex-end", // Align content to the right
+                            alignItems: isMobile ? "center" : "flex-end",
+                            textAlign: isMobile ? "center" : "right"
                         }}
                     >
                         <Typography variant="h5" fontWeight="bold" gutterBottom>
                             COMPREHENSIVE CAPABILITIES
                         </Typography>
-                        <Typography variant="body1" paragraph sx={{ textAlign: "right" }}>
+                        <Typography variant="body1" paragraph>
                             Our range of services and equipment enables us to transport
                             everything from temperature-sensitive goods to standard dry
                             freight.
                         </Typography>
                     </Box>
 
-                    {/* Truck Image (Absolutely Positioned at the Intersection) */}
+                    {/* Truck Image - Adjusted for Mobile */}
                     <Box
                         sx={{
-                            position: "absolute",
-                            top: "50%", // Center vertically
-                            left: "50%", // Center horizontally
-                            transform: "translate(-50%, -50%)", // Adjust for the image's own dimensions
-                            zIndex: 1, // Ensure the image is above the grid
-                            width: "100%", // Span the full width of the grid
-                            maxWidth: "600px", // Limit the width to match the screenshot
+                            position: {md:"absolute",lg:"absolute"},
+                            top: isMobile ? "85%" : "50%", // Lowered on mobile
+                            left: {md:"50%",lg:"50%"},
+                            transform: {md:"translate(-50%, -50%)",lg:"translate(-50%, -50%)"},
+                            zIndex: 1,
+                            width: "100%", // Adjusted width for mobile
+                            maxWidth: "600px",
                             textAlign: "center",
                         }}
                     >

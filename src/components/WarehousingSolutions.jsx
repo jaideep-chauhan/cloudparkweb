@@ -10,7 +10,7 @@ const WarehousingSolutions = () => {
   return (
     <Box
       sx={{
-        py: 6,
+        py: {md:6,lg:6},
         backgroundColor: "#f5f5f5",
         display: "flex",
         justifyContent: "center",
@@ -19,7 +19,7 @@ const WarehousingSolutions = () => {
       <Box
         sx={{
           textAlign: "center",
-          marginX: "124px",
+          marginX: {xs:'30px',md:'124px'},
         }}
       >
         {/* Warehousing Solutions Label */}
@@ -30,7 +30,7 @@ const WarehousingSolutions = () => {
             color: "#ffffff",
             borderRadius: "20px",
             px: 2,
-            py: 0.5,
+            py: {md:0.5,lg:0.5},
             mb: 4,
           }}
         >
@@ -45,7 +45,7 @@ const WarehousingSolutions = () => {
           fontWeight="bold"
           color="#003087"
           gutterBottom
-          sx={{ mb: 2 }}
+          sx={{ mb: 2 ,fontSize:{xs:20} }}
         >
           Expanding Your Capacity with Flexible Warehousing Solutions
         </Typography>
@@ -55,7 +55,7 @@ const WarehousingSolutions = () => {
           variant="body1"
           color="text.primary"
           paragraph
-          sx={{ mb: 6, maxWidth: "800px", margin: "0 auto", fontSize: "20px" }}
+          sx={{ mb: 6, maxWidth: "800px", margin: "0 auto", fontSize: {xs:16,md:20, lg:20} }}
         >
           At CloudPark, we are building scalable warehousing solutions tailored
           for your needs. With storage options, including temperature-controlled

@@ -9,7 +9,7 @@ const Hero = () => {
     <Box
       sx={{
         height: isMobile ? "500px" : "700px",
-        backgroundImage: "url('/images/IMG_0431.JPG')",
+        // backgroundImage: "url('/images/IMG_0431.JPG')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",
@@ -20,6 +20,25 @@ const Hero = () => {
         px: isMobile ? 3 : 5,
       }}
     >
+        {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "cover", // Ensures the video covers the full area
+      zIndex: -1, // Sends the video to the background
+    }}
+  >
+    <source src="/images/heroVideo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
       <Box
         sx={{
           position: "absolute",
@@ -36,7 +55,7 @@ const Hero = () => {
         <Typography variant={isMobile ? "h5" : "h3"} fontWeight="bold" sx={{ color: "#66B2FF", lineHeight: 1.1 }}>
           WELCOME TO
         </Typography>
-        <Typography variant={isMobile ? "h3" : "h1"} fontWeight="bold" sx={{ color: "#66B2FF", lineHeight: 1.1, fontSize:"5rem" }}>
+        <Typography variant={isMobile ? "h3" : "h1"} fontSize = {isMobile ? '3rem' : "5rem"} fontWeight="bold" sx={{ color: "#66B2FF", lineHeight: 1.1 }}>
           CLOUDPARK <br/> LOGISTICS
         </Typography>
       </Box>

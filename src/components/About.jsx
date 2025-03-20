@@ -12,7 +12,7 @@ const About = () => {
         backgroundImage: "url(./images/doubletruck.png)",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        py: 12,
+        py: { xs: 4, md: 12 },
         color: "#fff",
         position: "relative",
       }}
@@ -41,10 +41,20 @@ const About = () => {
         >
           ABOUT US
         </Typography>
-        <Typography variant="h4" fontWeight="bold" mb={2}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={2}
+          sx={{ fontSize: { xs: 22 } }}
+        >
           Our mission is to redefine logistics with innovation, precision
         </Typography>
-        <Typography variant="h4" fontWeight="bold" mb={4}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={4}
+          sx={{ fontSize: { xs: 20 } }}
+        >
           and exceptional service, enabling our clients to achieve success.
         </Typography>
         <Grid container spacing={4} textAlign="left" mb={8}>
@@ -67,22 +77,22 @@ const About = () => {
 
       <Container
         sx={{
-          position: "absolute",
+          position: { md: "absolute" },
           bottom: -60,
           left: "50%",
-          transform: "translateX(-50%)",
+          transform: { md: "translateX(-50%)" },
           zIndex: 2,
           width: "100%",
         }}
       >
         <Grid container spacing={3} justifyContent="center" alignItems="center">
           {/* First Card */}
-          <Grid item xs={12} sm={6} md={3} position="relative">
+          <Grid item xs={6} sm={6} md={3} position="relative">
             <Paper
               elevation={6}
               sx={{
-                paddingX:"40px",
-                paddingY:"20px",
+                paddingX: "40px",
+                paddingY: "20px",
                 bgcolor: "#1565c0",
                 color: "#fff",
                 borderRadius: "10px",
@@ -94,28 +104,32 @@ const About = () => {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  backgroundColor:"yellow",
-                  padding:"10px",
-                  borderRadius:"50%"
+                  backgroundColor: "yellow",
+                  padding: "10px",
+                  borderRadius: "50%",
                 }}
               >
-                <img src="./images/about-icon1.png" width="40px" height='40px' ></img>
+                <img
+                  src="./images/about-icon1.png"
+                  width="40px"
+                  height="40px"
+                />
               </Box>
               <Typography
                 variant="h6"
                 fontWeight="bold"
-                sx={{ color: "#ffd700" }}
+                sx={{ color: "#ffd700" ,fontSize:{xs:16} }}
               >
                 Fleet Strength
               </Typography>
               <Box sx={{ display: "flex", alignItems: "end" }}>
-                <Typography variant="h3" fontWeight="bold">
+                <Typography variant="h3" fontWeight="bold" fontSize={{xs:30}}>
                   30+
                 </Typography>
                 <Typography variant="body2">Trucks </Typography>
               </Box>
               <Box sx={{ display: "flex", alignItems: "end" }}>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h4" fontWeight="bold" fontSize={{xs:30}}>
                   60+
                 </Typography>
                 <Typography variant="body2">Trailers</Typography>
@@ -124,51 +138,12 @@ const About = () => {
           </Grid>
 
           {/* Second Card */}
-          <Grid item xs={12} sm={6} md={3} position="relative">
+          <Grid item xs={6} sm={6} md={3} position="relative">
             <Paper
               elevation={6}
               sx={{
-                paddingX:"40px",
-                paddingY:"20px",
-                bgcolor: "#1565c0",
-                color: "#fff",
-                borderRadius: "10px",
-                textAlign: "left",
-              }}
-            >
-               <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  backgroundColor:"yellow",
-                  padding:"10px",
-                  borderRadius:"50%"
-                }}
-              >
-                <img src="./images/about-icon2.png" width="40px" height='40px' ></img>
-              </Box>
-              <Typography
-                variant="h6"
-                fontWeight="bold"
-                sx={{ color: "#ffd700" }}
-              >
-                Service Reach
-              </Typography>
-              <Typography variant="h2" fontWeight="bold">
-                50K+
-              </Typography>
-              <Typography variant="body2">Shipments Completed</Typography>
-            </Paper>
-          </Grid>
-
-          {/* Third Card */}
-          <Grid item xs={12} sm={6} md={3} position="relative">
-            <Paper
-              elevation={6}
-              sx={{
-                paddingX:"40px",
-                paddingY:"20px",
+                paddingX: {xs:"30px",md:"40px"},
+                paddingY: "20px",
                 bgcolor: "#1565c0",
                 color: "#fff",
                 borderRadius: "10px",
@@ -180,14 +155,61 @@ const About = () => {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  backgroundColor:"yellow",
-                  padding:"10px",
-                  borderRadius:"50%"
+                  backgroundColor: "yellow",
+                  padding: "10px",
+                  borderRadius: "50%",
                 }}
               >
-                <img src="./images/about-icon3.png" width="40px" height='40px' ></img>
+                <img
+                  src="./images/about-icon2.png"
+                  width="40px"
+                  height="40px"
+                />
               </Box>
-              <Typography variant="h1" fontWeight="bold" fontSize="5rem">
+              <Typography
+                variant="h6"
+                fontWeight="bold"
+                sx={{ color: "#ffd700", fontSize:{xs:16} }}
+              >
+                Service Reach
+              </Typography>
+              <Typography variant="h2" fontWeight="bold" fontSize={{xs:30,md:40}}>
+                50K+
+              </Typography>
+              <Typography variant="body2">Shipments Completed</Typography>
+            </Paper>
+          </Grid>
+
+          {/* Third Card */}
+          <Grid item xs={6} sm={6} md={3} position="relative">
+            <Paper
+              elevation={6}
+              sx={{
+                paddingX: "40px",
+                paddingY: "20px",
+                bgcolor: "#1565c0",
+                color: "#fff",
+                borderRadius: "10px",
+                textAlign: "left",
+              }}
+            >
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  backgroundColor: "yellow",
+                  padding: "10px",
+                  borderRadius: "50%",
+                }}
+              >
+                <img
+                  src="./images/about-icon3.png"
+                  width="40px"
+                  height="40px"
+                />
+              </Box>
+              <Typography variant="h1" fontWeight="bold" fontSize={{xs:30, md:"4rem"}}>
                 10+
               </Typography>
               <Typography variant="body2">
@@ -197,12 +219,12 @@ const About = () => {
           </Grid>
 
           {/* Fourth Card */}
-          <Grid item xs={12} sm={6} md={3} position="relative">
+          <Grid item xs={6} sm={6} md={3} position="relative">
             <Paper
               elevation={6}
               sx={{
-                paddingX:"40px",
-                paddingY:"20px",
+                paddingX: "40px",
+                paddingY: "20px",
                 bgcolor: "#1565c0",
                 color: "#fff",
                 borderRadius: "10px",
@@ -214,14 +236,18 @@ const About = () => {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  backgroundColor:"yellow",
-                  padding:"10px",
-                  borderRadius:"50%"
+                  backgroundColor: "yellow",
+                  padding: "10px",
+                  borderRadius: "50%",
                 }}
               >
-                <img src="./images/about-icon4.png" width="40px" height='40px' ></img>
+                <img
+                  src="./images/about-icon4.png"
+                  width="40px"
+                  height="40px"
+                />
               </Box>
-              <Typography variant="h5" fontWeight="bold" fontSize="1.35rem">
+              <Typography variant="h5" fontWeight="bold" fontSize={{xs:14, md:"1.10rem"}}>
                 TEMPERATURE AND AMBIENT WAREHOUSING STORAGE
               </Typography>
             </Paper>

@@ -9,6 +9,7 @@ import {
   ListItem,
   ListItemText,
   Box,
+  Divider
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -31,21 +32,13 @@ const Navbar = () => {
       <Toolbar
         sx={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: {xs:"space-between",md:"center"},
           gap: 4,
           alignItems: "center",
+          paddingX: mobileOpen ? "10px" : "",
         }}
       >
-        {/* Mobile Menu Button */}
-        <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ display: { xs: "block", md: "none" } }}
-          onClick={handleDrawerToggle}
-        >
-          <MenuIcon />
-        </IconButton>
+      
 
         {/* Left Buttons */}
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
@@ -83,6 +76,16 @@ const Navbar = () => {
             </Button>
           ))}
         </Box>
+          {/* Mobile Menu Button */}
+          <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          sx={{ display: { xs: "block", md: "none" } }}
+          onClick={handleDrawerToggle}
+        >
+          <MenuIcon />
+        </IconButton>
       </Toolbar>
 
       {/* Mobile Drawer */}
@@ -91,8 +94,23 @@ const Navbar = () => {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         sx={{ display: { xs: "block", md: "none" } }}
+        PaperProps={{
+          sx: {
+            backgroundColor: "#1565c0",
+            color: "white",
+            width: 280,
+          },
+        }}
       >
-        <List sx={{ width: 250 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", p: 2, color:"#fff" }}>
+          <img
+            src="/images/logo-01.png"
+            alt="Cloudpark Logistics"
+            style={{ maxWidth: "150px", marginBottom: "10px", color:"#fff" }}
+          />
+        </Box>
+        <Divider sx={{ bgcolor: "white" }} />
+        <List>
           {navItems.map((item, index) => (
             <ListItem
               button
@@ -100,8 +118,9 @@ const Navbar = () => {
               component="a"
               href={item.link}
               onClick={handleDrawerToggle}
+              sx={{ "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" } }}
             >
-              <ListItemText primary={item.text} />
+              <ListItemText primary={item.text} sx={{ textAlign: "center", fontWeight: "bold", color:"#fff" }} />
             </ListItem>
           ))}
         </List>

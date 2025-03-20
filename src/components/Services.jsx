@@ -21,15 +21,18 @@ const Services = () => {
           maxWidth: "1200px", // Adjusted to fit the layout
           display: "flex",
           justifyContent: "space-between",
-          // alignItems: "flex-start",
+          alignItems: {xs:"center"},
+          flexDirection:{xs:'column',md:'row',lg:"row"}
         }}
       >
         {/* Left Side: Text Content */}
         <Box
           sx={{
-            maxWidth: "60%",
-            textAlign: "left",
-            paddingRight: "20px",
+            maxWidth: {xs:'100%',md:"60%",lg:"60%"},
+            textAlign: {xs:"center",md:"left",lg:"left"},
+            paddingRight: {md:"20px", lg:"20px"},
+            paddingX:{xs:"20px"}
+            
           }}
         >
           {/* Service Areas Label */}
@@ -77,7 +80,7 @@ const Services = () => {
           </Typography>
 
           {/* Flag and Text Sections */}
-          <Box sx={{ mt: 2, display: "flex", alignItems: "" }}>
+          <Box sx={{ mt: 2, display: {md:"flex",lg:"flex"}, alignItems: "" }}>
             <Box sx={{ display: "flex", alignItems: "flex-start" }}>
               <img
                 src={CanadaFlag}
@@ -140,11 +143,12 @@ const Services = () => {
         {/* Right Side: Maps */}
         <Box
           sx={{
-            maxWidth: "40%",
+            maxWidth: {md:"40%",lg:"40%"},
             textAlign: "center",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            alignItems:{xs:"center"},
             gap: 2,
             marginTop: 6,
           }}

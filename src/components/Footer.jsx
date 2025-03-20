@@ -1,42 +1,45 @@
 import React from "react";
-import { Box, Typography, Paper, Button } from "@mui/material";
+import { Box, Typography, Paper, Button, useMediaQuery, useTheme } from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
 
 const Footer = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Mobile responsiveness
+
   return (
     <Box sx={{ backgroundColor: "#1565c0", color: "white", py: 4, mt: 4 }}>
       {/* Footer Content */}
       <Box
         sx={{
           display: "flex",
-          // flexWrap: "wrap",
+          flexDirection: isMobile ? "column" : "row", // Stack on mobile
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
           gap: 3,
-          px: 10,
+          px: isMobile ? 2 : 10, // Adjusted padding for mobile
+          textAlign: isMobile ? "center" : "left",
         }}
       >
         {/* Left Section */}
         <Paper
           sx={{
-            minWidth: "20rem",
+            width: isMobile ? "100%" : "20rem", // Full width on mobile
             p: 3,
             bgcolor: "white",
             textAlign: "center",
             borderRadius: "10px",
-            flex: "1 1",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             alignItems: "center",
             minHeight: "120px",
-            gap: 2,
+            gap: 1,
           }}
         >
-          <Typography variant="h6" fontWeight="bold" color="primary">
+          <Typography variant="h4" fontWeight="bold" color="primary" fontSize={18}>
             Get The Best Rate For Your Freight Transport
           </Typography>
           <Typography variant="body2" color="textSecondary">
@@ -57,182 +60,138 @@ const Footer = () => {
           </Button>
         </Paper>
 
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <Box
+   <Box sx={{display:"flex",flexDirection:"column",alignItems:"start"}}>
+         {/* Contact Information Cards */}
+         <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", // Stack cards in mobile
+            gap: 2,
+            width: "100%",
+          }}
+        >
+          {/* Customer Service Card */}
+          <Paper
             sx={{
+              p: 2,
+              bgcolor: "#FFA000",
+              borderRadius: "10px",
               display: "flex",
-              alignItems: "stretch",
-              justifyContent: "space-between",
-              gap: "20px",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 2,
             }}
           >
-            {/* First Card */}
-            <Paper
-              sx={{
-                p: 2,
-                bgcolor: "#FFA000",
-                borderRadius: "10px",
-                flex: "1 1",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 2,
-              }}
-            >
-              <Box
-                sx={{
-                  color: "blue",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "50px",
-                }}
-              >
-                <LocalPhoneIcon fontSize="large" />
-              </Box>
-              <Box>
-                <Typography fontWeight="bold" color="#fff">
-                  24/7 Customer Service
-                </Typography>
-                <Typography variant="body2" whiteSpace="pre-line">
-                  +1 416-900-8673
-                </Typography>
-              </Box>
-            </Paper>
+            <LocalPhoneIcon sx={{ color: "blue", fontSize: "30px" }} />
+            <Box>
+              <Typography fontWeight="bold" color="#fff">
+                24/7 Customer Service
+              </Typography>
+              <Typography variant="body2">+1 416-900-8673</Typography>
+            </Box>
+          </Paper>
 
-            {/* Second Card */}
-            <Paper
-              sx={{
-                p: 2,
-                bgcolor: "#FFA000",
-                borderRadius: "10px",
-                flex: "1 1",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 1,
-              }}
-            >
-              <EmailIcon sx={{ color: "blue" }} fontSize="large" />
-              <Box>
-                <Box>
-                  <Box sx={{ display: "flex" }}>
-                    <Typography variant="p" color="#fff" fontSize="15px">
-                      General Inquiry
-                    </Typography>
-                    <Typography variant="p" fontSize="15px" paddingLeft="10px">
-                      info@cloudpark.ca
-                    </Typography>
-                  </Box>
+          {/* Email Contact Card */}
+          <Paper
+            sx={{
+              p: 2,
+              bgcolor: "#FFA000",
+              borderRadius: "10px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 1,
+            }}
+          >
+            <EmailIcon sx={{ color: "blue", fontSize: "30px" }} />
+            <Box>
+              {[
+                { label: "General Inquiry", email: "info@cloudpark.ca" },
+                { label: "Karamvir G", email: "kgill@cloudpark.ca" },
+                { label: "Aman S.", email: "askerhi@cloudpark.ca" },
+                { label: "Sal B.", email: "sal@cloudpark.ca" },
+              ].map((contact, index) => (
+                <Box key={index} sx={{ display: "flex" }}>
+                  <Typography variant="body2" color="#fff">
+                    {contact.label}
+                  </Typography>
+                  <Typography variant="body2" paddingLeft="15px">{contact.email}</Typography>
                 </Box>
-                <Box>
-                  <Box sx={{ display: "flex" }}>
-                    <Typography variant="p" color="#fff" fontSize="15px">
-                      Karamvir G
-                    </Typography>
-                    <Typography variant="p" fontSize="15px" paddingLeft="10px">
-                      kgill@cloudpark.ca
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box>
-                  <Box sx={{ display: "flex" }}>
-                    <Typography variant="p" color="#fff" fontSize="15px">
-                      Aman S.
-                    </Typography>
-                    <Typography variant="p" fontSize="15px" paddingLeft="10px">
-                      askerhi@cloudpark.ca
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box>
-                  <Box sx={{ display: "flex" }}>
-                    <Typography variant="p" color="#fff" fontSize="15px">
-                      Sal B.
-                    </Typography>
-                    <Typography variant="p" fontSize="15px" paddingLeft="10px">
-                      sal@cloudpark.ca
-                    </Typography>
-                  </Box>
-                </Box>
-              </Box>
-            </Paper>
+              ))}
+            </Box>
+          </Paper>
 
-            {/* Third Card */}
-            <Paper
-              sx={{
-                p: 2,
-                bgcolor: "#FFA000",
-                borderRadius: "10px",
-                flex: "1 1",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 2,
-              }}
-            >
-              <HomeIcon fontSize="large" sx={{color:"blue"}}/>
-
-              <Box>
-                <Box>
-                  <Box sx={{ display: "flex" }}>
-                    <Typography variant="p" color="#fff" fontSize="15px">
-                      Calgary Yard
-                    </Typography>
-                    <Typography variant="p" fontSize="15px" paddingLeft="10px">
-                      9050 Innovation Ave SE, Calgary, AB T3S 0A2
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box>
-                  <Box sx={{ display: "flex" }}>
-                    <Typography variant="p" color="#fff" fontSize="15px">
-                    GTA Yard
-                    </Typography>
-                    <Typography variant="p" fontSize="15px" paddingLeft="10px">
-                    7499 Auburn Road,
-                    Milton, ON, L9T 7V9
-                    </Typography>
-                  </Box>
-                </Box>
-              </Box>
-            </Paper>
-          </Box>
-          <Box sx={{ display: "flex", gap: "30px" }}>
-            <Typography>Home</Typography>
-            <Typography>Services</Typography>
-            <Typography>Our Fleet</Typography>
-            <Typography>Contact Us</Typography>
-          </Box>
+          {/* Location Card */}
+          <Paper
+            sx={{
+              p: 2,
+              bgcolor: "#FFA000",
+              borderRadius: "10px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            <HomeIcon sx={{ color: "blue", fontSize: "30px" }} />
+            <Box>
+              <Typography variant="body2" color="#fff">
+                Calgary Yard: 9050 Innovation Ave SE, Calgary, AB T3S 0A2
+              </Typography>
+              <Typography variant="body2" color="#fff">
+                GTA Yard: 7499 Auburn Road, Milton, ON, L9T 7V9
+              </Typography>
+            </Box>
+          </Paper>
         </Box>
+          {/* Navigation Links */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection:"row", // Stack links on mobile
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 3,
+          mt: 3,
+          textAlign: "center",
+        }}
+      >
+        {["Home", "Services", "Our Fleet", "Contact Us"].map((link, index) => (
+          <Typography key={index}>{link}</Typography>
+        ))}
+      </Box>
+   </Box>
       </Box>
 
-      {/* Footer Links */}
+    
+
+      {/* Footer Bottom Section */}
       <Box
         mt={4}
         sx={{
           display: "flex",
+          flexDirection: isMobile ? "column" : "row", // Stack content on mobile
           justifyContent: "space-between",
           alignItems: "center",
-          paddingX: "80px",
+          textAlign: "center",
+          px: isMobile ? 2 : "80px",
+          gap: isMobile ? 2 : 0,
         }}
       >
-        <Typography variant="p" fontSize="14px">
-          Cloudpark Logistics | All rights reserved
-        </Typography>
-        <Box mt={1} sx={{ display: "flex", justifyContent: "center", gap: 1 }}>
-          {[
-            "Privacy",
-            "/",
-            "Terms & Conditions",
-            "/",
-            "Site Map",
-            "/",
-            "Contact",
-          ].map((link, i) => (
+        <Typography variant="body2">Cloudpark Logistics | All rights reserved</Typography>
+
+        {/* Footer Links */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            justifyContent: "center",
+            gap: isMobile ? 1 : 2,
+          }}
+        >
+          {["Privacy", "Terms & Conditions", "Site Map", "Contact"].map((link, i) => (
             <Typography
               key={i}
-              variant="p"
               sx={{
                 cursor: "pointer",
                 textDecoration: "none",
